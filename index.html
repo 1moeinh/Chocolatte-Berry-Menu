@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>منوی کافه چاکلت بری</title>
+    <style>
+        /* متغیرهای رنگی پایه بر اساس تم زرشکی تیره و مینیمال */
+        :root {
+            --bg-color: #0d0204;
+            --primary-crimson: #6b0f24;
+            --primary-crimson-light: #8e1430;
+            --card-bg: #1a050a;
+            --text-main: #fcf6f7;
+            --text-muted: #a39295;
+            --accent-gold: #d4af37;
+        }
+
+        /* تنظیمات پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+        }
+
+        /* محدود کردن عرض برای شبیه‌سازی موبایل در نمایشگرهای بزرگ */
+        .mobile-app {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* هدر اپلیکیشن */
+        header {
+            padding: 30px 20px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, var(--text-main), var(--primary-crimson-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+        
+        header p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* تب‌های دسته‌بندی */
+        .categories {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 20px 20px;
+            gap: 15px;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .categories::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--primary-crimson);
+            color: var(--text-muted);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-crimson);
+            color: var(--text-main);
+            box-shadow: 0 4px 15px rgba(107, 15, 36, 0.4);
+        }
+
+        /* بخش محتوای منو */
+        .menu-content {
+            flex: 1;
+            padding: 0 20px 30px;
+            overflow-y: auto;
+        }
+
+        .menu-section {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .menu-section.active {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* طراحی کارت‌های مینیمال و جذاب */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 12px;
+            gap: 15px;
+            border: 1px solid rgba(107, 15, 36, 0.2);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+            border-color: var(--primary-crimson-light);
+        }
+
+        .card-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            object-fit: cover;
+            background-color: var(--bg-color);
+        }
+
+        .card-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 80px;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .card-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-price {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-align: left;
+            margin-top: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-app">
+        
+        <header>
+            <h1>Chocolatte Berry</h1>
+            <p>Premium Cafe Menu</p>
+        </header>
+
+        <nav class="categories">
+            <button class="tab-btn active" data-target="berry">چاکلت بری</button>
+            <button class="tab-btn" data-target="waffle">وافل‌ها</button>
+            <button class="tab-btn" data-target="crepe">کرپ‌ها</button>
+            <button class="tab-btn" data-target="croissant">کروسان</button>
+        </nav>
+
+        <main class="menu-content">
+            <section id="berry" class="menu-section active"></section>
+            <section id="waffle" class="menu-section"></section>
+            <section id="crepe" class="menu-section"></section>
+            <section id="croissant" class="menu-section"></section>
+        </main>
+    </div>
+
+    <script>
+        // مپ کردن دسته‌بندی‌های JSON به ID سکشن‌های HTML
+        const categoryMap = {
+            "Chocolates & Berries": "berry",
+            "Choles & Berries": "berry", 
+            "Waffles": "waffle",
+            "Crepes": "crepe",
+            "Croissants": "croissant"
+        };
+
+        // تصاویر پیش‌فرض برای زمانی که URL خالی است
+        const defaultImages = {
+            'berry': 'https://images.unsplash.com/photo-1559598467-7154562c5025?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
+            'waffle': 'https://images.unsplash.com/photo-1562376552-0d160a2f9fa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
+            'crepe': 'https://images.unsplash.com/photo-1519676867240-f03562e64548?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
+            'croissant': 'https://images.unsplash.com/photo-1549903072-7e6e0d234247?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
+        };
+
+        // تبدیل اعداد انگلیسی به فارسی
+        function toPersianNum(num) {
+            if (!num) return '';
+            const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+            return num.toString().replace(/\d/g, x => farsiDigits[x]);
+        }
+
+        // ساخت فرمت قیمت زیبا
+        function formatPrice(item) {
+            if (item.price) return toPersianNum(item.price) + ',۰۰۰ ت';
+            if (item.sizes) {
+                let parts = [];
+                if (item.sizes.S) parts.push('کوچک: ' + toPersianNum(item.sizes.S) + ',۰۰۰');
+                if (item.sizes.M) parts.push('متوسط: ' + toPersianNum(item.sizes.M) + ',۰۰۰');
+                if (item.sizes.L) parts.push('بزرگ: ' + toPersianNum(item.sizes.L) + ',۰۰۰');
+                
+                if (parts.length === 0) return 'قیمت نامشخص';
+                return parts.join(' | ') + ' ت';
+            }
+            return 'قیمت نامشخص';
+        }
+
+        // رندر کردن آیتم‌ها در صفحه
+        function renderMenu(menuData) {
+            menuData.forEach(item => {
+                if (!item.active) return; 
+                
+                const sectionId = categoryMap[item.category];
+                const section = document.getElementById(sectionId);
+                
+                if (section) {
+                    const imgSrc = item.url ? item.url : defaultImages[sectionId];
+                    const priceText = formatPrice(item);
+                    
+                    const cardHTML = `
+                        <div class="card">
+                            <img src="${imgSrc}" alt="${item.name}" class="card-img">
+                            <div class="card-info">
+                                <h3 class="card-title">${item.name}</h3>
+                                <p class="card-desc">${item.ingredients}</p>
+                                <div class="card-price">${priceText}</div>
+                            </div>
+                        </div>
+                    `;
+                    section.insertAdjacentHTML('beforeend', cardHTML);
+                }
+            });
+        }
+
+        // واکشی داده‌ها از فایل JSON
+        async function loadMenuData() {
+            try {
+                // آدرس‌دهی نسبی بر اساس ساختار پروژه شما
+                const response = await fetch('./scripts/menuData.json');
+                if (!response.ok) {
+                    throw new Error(`خطا در شبکه: ${response.status}`);
+                }
+                const data = await response.json();
+                renderMenu(data);
+            } catch (error) {
+                console.error("بارگذاری منو با خطا مواجه شد:", error);
+                // نمایش پیغام خطا در صفحه در صورت بروز مشکل
+                document.querySelector('.menu-content').innerHTML = `<p style="text-align:center; color:var(--text-muted); padding-top:20px;">خطا در بارگذاری اطلاعات منو. لطفا پروژه را روی Live Server اجرا کنید.</p>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // بارگذاری داده‌ها با fetch
+            loadMenuData();
+
+            // منطق سوییچ کردن تب‌ها
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const menuSections = document.querySelectorAll('.menu-section');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    menuSections.forEach(s => s.classList.remove('active'));
+
+                    btn.classList.add('active');
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

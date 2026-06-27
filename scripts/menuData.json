@@ -1,0 +1,206 @@
+[
+    {
+        "category": "Chocolates & Berries",
+        "name": "چاکلت بری",
+        "sizes": {
+            "L": 420,
+            "M": 375
+        },
+        "ingredients": "توت فرنگی، شکلات فندقی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "چاکلت موز بری",
+        "sizes": {
+            "L": 430,
+            "M": 375
+        },
+        "ingredients": "توت فرنگی، موز، شکلات فندقی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "دبی چاکلت",
+        "sizes": {
+            "L": 480,
+            "M": 440
+        },
+        "ingredients": "توت فرنگی، موز، شکلات فندقی، رشته کادایف، کره پسته",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "استرابری اورئو",
+        "sizes": {
+            "L": 430,
+            "M": 375
+        },
+        "ingredients": "توت فرنگی، موز، شکلات فندقی، تکه های اورئو",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "لوتوس بری",
+        "sizes": {
+            "L": 430,
+            "M": 375
+        },
+        "ingredients": "توت فرنگی، موز، شکلات فندقی، کرم لوتوس",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "اسپشیال بری",
+        "sizes": {
+            "L": 480
+        },
+        "ingredients": "توت فرنگی همراه ۳ مدل میوه دلخواه، ۲ مدل شکلات دلخواه",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "چاکلت بری رژیمی",
+        "sizes": {
+            "L": 420
+        },
+        "ingredients": "توت فرنگی، موز، کره بادام زمینی، عسل",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "استوایی بری",
+        "sizes": {
+            "L": 595,
+            "M": 550
+        },
+        "ingredients": "توت فرنگی، میوه های استوایی، ۲ مدل شکلات دلخواه",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "بلوبری شات",
+        "sizes": {
+            "S": null
+        },
+        "ingredients": "بلوبری، شکلات دلخواه",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Choles & Berries",
+        "name": "رزبری شات",
+        "sizes": {
+            "S": null
+        },
+        "ingredients": "رزبری، شکلات دلخواه",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Chocolates & Berries",
+        "name": "یام بری",
+        "sizes": {
+            "L": 440
+        },
+        "ingredients": "وافل توپی، توت فرنگی، موز، شکلات فندقی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Waffles",
+        "name": "وافل کلاسیک",
+        "price": 460,
+        "ingredients": "وافل، شکلات فندقی، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Waffles",
+        "name": "وافل قهوه",
+        "price": 460,
+        "ingredients": "وافل قهوه، شکلات فندقی، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Waffles",
+        "name": "وافل لوتوس",
+        "price": 460,
+        "ingredients": "وافل، شکلات فندقی، بیسکوییت، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Waffles",
+        "name": "لازانیا بری",
+        "price": 640,
+        "ingredients": "دو عدد وافل، شکلات فندقی، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Crepes",
+        "name": "کرپ کلاسیک",
+        "price": 460,
+        "ingredients": "کرپ، شکلات فندقی، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Crepes",
+        "name": "کرپ قهوه",
+        "price": 460,
+        "ingredients": "کرپ قهوه، شکلات فندقی، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Crepes",
+        "name": "کرپ لوتوس",
+        "price": 460,
+        "ingredients": "کرپ، شکلات فندقی، بیسکوییت، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Crepes",
+        "name": "پاستا بری",
+        "price": 480,
+        "ingredients": "کرپ رشته ای، شکلات فندقی، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Croissants",
+        "name": "کروسان کرم دار",
+        "price": 295,
+        "ingredients": "کروسان، کرم شکلات دلخواه",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Croissants",
+        "name": "کروسان بری",
+        "price": 380,
+        "ingredients": "کروسان، شکلات فندقی، موز، توت فرنگی",
+        "url": null,
+        "active": true
+    },
+    {
+        "category": "Croissants",
+        "name": "دبی کروسان بری",
+        "price": 530,
+        "ingredients": "کروسان، کره پسته، موز، توت فرنگی، کادایف",
+        "url": null,
+        "active": true
+    }
+]
