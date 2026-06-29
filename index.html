@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>منوی کافه چاکلت بری</title>
     <style>
-        /* متغیرهای رنگی پایه بر اساس تم زرشکی تیره و مینیمال */
+        
         :root {
-            --bg-color: #0d0204;
+            --bg-color: #2a080f;
             --primary-crimson: #6b0f24;
             --primary-crimson-light: #8e1430;
             --card-bg: #1a050a;
@@ -16,7 +16,7 @@
             --accent-gold: #d4af37;
         }
 
-        /* تنظیمات پایه */
+       
         * {
             margin: 0;
             padding: 0;
@@ -32,7 +32,7 @@
             justify-content: center;
         }
 
-        /* محدود کردن عرض برای شبیه‌سازی موبایل در نمایشگرهای بزرگ */
+        
         .mobile-app {
             width: 100%;
             max-width: 480px;
@@ -42,9 +42,10 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
+            overflow-x: hidden; 
         }
 
-        /* هدر اپلیکیشن */
+        
         header {
             padding: 30px 20px 20px;
             text-align: center;
@@ -67,17 +68,18 @@
             text-transform: uppercase;
         }
 
-        /* تب‌های دسته‌بندی */
+        
         .categories {
             display: flex;
             overflow-x: auto;
             padding: 10px 20px 20px;
             gap: 15px;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
         }
         
         .categories::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         .tab-btn {
@@ -90,6 +92,7 @@
             font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
+            flex-shrink: 0; 
             transition: all 0.3s ease;
         }
 
@@ -226,10 +229,11 @@
         </header>
 
         <nav class="categories">
-            <button class="tab-btn active" data-target="berry">چاکلت بری</button>
-            <button class="tab-btn" data-target="waffle">وافل‌ها</button>
-            <button class="tab-btn" data-target="crepe">کرپ‌ها</button>
-            <button class="tab-btn" data-target="croissant">کروسان</button>
+            <button class="tab-btn active" data-target="berry">Chocolate Berry</button>
+            <button class="tab-btn" data-target="waffle">Waffles</button>
+            <button class="tab-btn" data-target="crepe">Crepes</button>
+            <button class="tab-btn" data-target="croissant">Croissants</button>
+            <button class="tab-btn" data-target="others">Others</button>
         </nav>
 
         <main class="menu-content">
@@ -237,6 +241,8 @@
             <section id="waffle" class="menu-section"></section>
             <section id="crepe" class="menu-section"></section>
             <section id="croissant" class="menu-section"></section>
+            <!-- بخش خالی برای Others اضافه شد -->
+            <section id="others" class="menu-section"></section>
         </main>
     </div>
 
@@ -247,7 +253,8 @@
             "Choles & Berries": "berry", 
             "Waffles": "waffle",
             "Crepes": "crepe",
-            "Croissants": "croissant"
+            "Croissants": "croissant",
+            "Others": "others" // اضافه شدن نگاشت برای بخش جدید
         };
 
         // تصاویر پیش‌فرض برای زمانی که URL خالی است
@@ -255,7 +262,8 @@
             'berry': 'https://images.unsplash.com/photo-1559598467-7154562c5025?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
             'waffle': 'https://images.unsplash.com/photo-1562376552-0d160a2f9fa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
             'crepe': 'https://images.unsplash.com/photo-1519676867240-f03562e64548?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
-            'croissant': 'https://images.unsplash.com/photo-1549903072-7e6e0d234247?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
+            'croissant': 'https://images.unsplash.com/photo-1549903072-7e6e0d234247?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
+            'others': 'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
         };
 
         // تبدیل اعداد انگلیسی به فارسی
@@ -310,7 +318,6 @@
         // واکشی داده‌ها از فایل JSON
         async function loadMenuData() {
             try {
-                // آدرس‌دهی نسبی بر اساس ساختار پروژه شما
                 const response = await fetch('./scripts/menuData.json');
                 if (!response.ok) {
                     throw new Error(`خطا در شبکه: ${response.status}`);
@@ -319,13 +326,11 @@
                 renderMenu(data);
             } catch (error) {
                 console.error("بارگذاری منو با خطا مواجه شد:", error);
-                // نمایش پیغام خطا در صفحه در صورت بروز مشکل
                 document.querySelector('.menu-content').innerHTML = `<p style="text-align:center; color:var(--text-muted); padding-top:20px;">خطا در بارگذاری اطلاعات منو. لطفا پروژه را روی Live Server اجرا کنید.</p>`;
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // بارگذاری داده‌ها با fetch
             loadMenuData();
 
             // منطق سوییچ کردن تب‌ها
