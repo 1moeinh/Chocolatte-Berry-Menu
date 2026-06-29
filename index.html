@@ -273,7 +273,7 @@
 
         
         function formatPrice(item) {
-            if (item.price) return item.price + ',۰۰۰ T';
+            if (item.price) return item.price + ',000 T';
             if (item.sizes) {
                 let parts = [];
                 if (item.sizes.S) parts.push('S: ' + item.sizes.S + ',000');
@@ -304,7 +304,7 @@
                             <div class="card-info">
                                 <h3 class="card-title">${item.name}</h3>
                                 <p class="card-desc">${item.ingredients}</p>
-                                <div class="card-price">${priceText}</div>
+                                <div class="card-price" dir = ltr>${priceText}</div>
                             </div>
                         </div>
                     `;
