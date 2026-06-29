@@ -202,5 +202,13 @@
         "ingredients": "کروسان، کره پسته، موز، توت فرنگی، کادایف",
         "url": null,
         "active": true
+    },
+    {
+        "category": "others",
+        "name": "بستنی",
+        "price": 75,
+        "ingredients": "",
+        "url": null,
+        "active": false
     }
 ]
