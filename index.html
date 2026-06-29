@@ -187,6 +187,30 @@
                 transform: translateY(0);
             }
         }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .main-logo {
+            width: 90px; 
+            height: 90px;
+            object-fit: contain; 
+            border-radius: 50%; 
+            padding: 8px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--primary-crimson);
+            box-shadow: 0 0 20px rgba(107, 15, 36, 0.4); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .main-logo:active, .main-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -194,6 +218,9 @@
     <div class="mobile-app">
         
         <header>
+            <div class="logo-container">
+                <img src="assets/logo/logo.png" alt="Chocolatte Berry Logo" class="main-logo">
+            </div>
             <h1>Chocolatte Berry</h1>
             <p>Premium Cafe Menu</p>
         </header>
