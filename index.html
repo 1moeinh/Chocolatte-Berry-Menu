@@ -102,7 +102,7 @@
             box-shadow: 0 4px 15px rgba(107, 15, 36, 0.4);
         }
 
-        /* بخش محتوای منو */
+    
         .menu-content {
             flex: 1;
             padding: 0 20px 30px;
@@ -120,7 +120,6 @@
             gap: 20px;
         }
 
-        /* طراحی کارت‌های مینیمال و جذاب */
         .card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -241,23 +240,21 @@
             <section id="waffle" class="menu-section"></section>
             <section id="crepe" class="menu-section"></section>
             <section id="croissant" class="menu-section"></section>
-            <!-- بخش خالی برای Others اضافه شد -->
             <section id="others" class="menu-section"></section>
         </main>
     </div>
 
     <script>
-        // مپ کردن دسته‌بندی‌های JSON به ID سکشن‌های HTML
         const categoryMap = {
             "Chocolates & Berries": "berry",
             "Choles & Berries": "berry", 
             "Waffles": "waffle",
             "Crepes": "crepe",
             "Croissants": "croissant",
-            "Others": "others" // اضافه شدن نگاشت برای بخش جدید
+            "Others": "others" 
         };
 
-        // تصاویر پیش‌فرض برای زمانی که URL خالی است
+       
         const defaultImages = {
             'berry': 'https://images.unsplash.com/photo-1559598467-7154562c5025?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
             'waffle': 'https://images.unsplash.com/photo-1562376552-0d160a2f9fa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
@@ -266,29 +263,30 @@
             'others': 'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
         };
 
-        // تبدیل اعداد انگلیسی به فارسی
-        function toPersianNum(num) {
-            if (!num) return '';
-            const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-            return num.toString().replace(/\d/g, x => farsiDigits[x]);
-        }
+        
+        // function toPersianNum(num) {
+        //     if (!num) return '';
+        //     const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+        //     return num.toString().replace(/\d/g, x => farsiDigits[x]);
+        // }
+        // ۰۰۰
 
-        // ساخت فرمت قیمت زیبا
+        
         function formatPrice(item) {
-            if (item.price) return toPersianNum(item.price) + ',۰۰۰ ت';
+            if (item.price) return item.price + ',۰۰۰ T';
             if (item.sizes) {
                 let parts = [];
-                if (item.sizes.S) parts.push('کوچک: ' + toPersianNum(item.sizes.S) + ',۰۰۰');
-                if (item.sizes.M) parts.push('متوسط: ' + toPersianNum(item.sizes.M) + ',۰۰۰');
-                if (item.sizes.L) parts.push('بزرگ: ' + toPersianNum(item.sizes.L) + ',۰۰۰');
+                if (item.sizes.S) parts.push('S: ' + item.sizes.S + ',000');
+                if (item.sizes.M) parts.push('M: ' + item.sizes.M + ',000');
+                if (item.sizes.L) parts.push('L: ' + item.sizes.L + ',000');
                 
-                if (parts.length === 0) return 'قیمت نامشخص';
-                return parts.join(' | ') + ' ت';
+                if (parts.length === 0) return 'ناموجود';
+                return parts.join(' | ') + ' T';
             }
-            return 'قیمت نامشخص';
+            return 'ناموجود';
         }
 
-        // رندر کردن آیتم‌ها در صفحه
+        
         function renderMenu(menuData) {
             menuData.forEach(item => {
                 if (!item.active) return; 
