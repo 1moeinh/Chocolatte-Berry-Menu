@@ -5,7 +5,7 @@ const categoryMap = {
     "Waffles": "waffle",
     "Crepes": "crepe",
     "Croissants": "croissant",
-    "Others": "others" 
+    "Browni": "browni" 
 };
 
 
@@ -14,7 +14,7 @@ const defaultImages = {
     'waffle': 'https://images.unsplash.com/photo-1562376552-0d160a2f9fa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
     'crepe': 'https://images.unsplash.com/photo-1519676867240-f03562e64548?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
     'croissant': 'https://images.unsplash.com/photo-1549903072-7e6e0d234247?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80',
-    'others': 'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
+    'browni': 'https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80'
 };
 
 

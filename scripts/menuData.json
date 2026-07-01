@@ -7,7 +7,7 @@
             "M": 375
         },
         "ingredients": "توت فرنگی، شکلات فندقی",
-        "url": null,
+        "url": "../assets/images/chocolatteberry.jpg",
         "active": true
     },
     {
@@ -18,7 +18,7 @@
             "M": 375
         },
         "ingredients": "توت فرنگی، موز، شکلات فندقی",
-        "url": null,
+        "url": "../assets/images/banana_chocolateberry.jpg",
         "active": true
     },
     {
@@ -29,7 +29,7 @@
             "M": 440
         },
         "ingredients": "توت فرنگی، موز، شکلات فندقی، رشته کادایف، کره پسته",
-        "url": null,
+        "url": "../assets/images/dubai_chocolateberry.jpg",
         "active": true
     },
     {
@@ -40,7 +40,7 @@
             "M": 375
         },
         "ingredients": "توت فرنگی، موز، شکلات فندقی، تکه های اورئو",
-        "url": null,
+        "url": "../assets/images/oreo_chocolateberry.jpg",
         "active": true
     },
     {
@@ -51,7 +51,7 @@
             "M": 375
         },
         "ingredients": "توت فرنگی، موز، شکلات فندقی، کرم لوتوس",
-        "url": null,
+        "url": "../assets/images/lotus_berry.jpg",
         "active": true
     },
     {
@@ -82,7 +82,7 @@
             "M": 550
         },
         "ingredients": "توت فرنگی، میوه های استوایی، ۲ مدل شکلات دلخواه",
-        "url": null,
+        "url": "../assets/images/ostovayi_berry.jpg",
         "active": true
     },
     {
@@ -120,7 +120,7 @@
         "name": "وافل کلاسیک",
         "price": 460,
         "ingredients": "وافل، شکلات فندقی، موز، توت فرنگی",
-        "url": null,
+        "url": "../assets/images/waflle_classic.jpg",
         "active": true
     },
     {
@@ -136,7 +136,7 @@
         "name": "وافل لوتوس",
         "price": 460,
         "ingredients": "وافل، شکلات فندقی، بیسکوییت، موز، توت فرنگی",
-        "url": null,
+        "url": "../assets/images/waffle_lotus.jpg",
         "active": true
     },
     {
@@ -144,7 +144,7 @@
         "name": "لازانیا بری",
         "price": 640,
         "ingredients": "دو عدد وافل، شکلات فندقی، موز، توت فرنگی",
-        "url": null,
+        "url": "../assets/images/lazania_berry.png",
         "active": true
     },
     {
@@ -152,7 +152,7 @@
         "name": "کرپ کلاسیک",
         "price": 460,
         "ingredients": "کرپ، شکلات فندقی، موز، توت فرنگی",
-        "url": null,
+        "url": "../assets/images/crepe_classic.jpg",
         "active": true
     },
     {
@@ -176,7 +176,7 @@
         "name": "پاستا بری",
         "price": 480,
         "ingredients": "کرپ رشته ای، شکلات فندقی، موز، توت فرنگی",
-        "url": null,
+        "url": "../assets/images/pasta_berry.jpg",
         "active": true
     },
     {
@@ -184,7 +184,7 @@
         "name": "کروسان کرم دار",
         "price": 295,
         "ingredients": "کروسان، کرم شکلات دلخواه",
-        "url": null,
+        "url": "../assets/images/crossan.jpg",
         "active": true
     },
     {
@@ -192,7 +192,7 @@
         "name": "کروسان بری",
         "price": 380,
         "ingredients": "کروسان، شکلات فندقی، موز، توت فرنگی",
-        "url": null,
+        "url": "../assets/images/crossan_berry.jpg",
         "active": true
     },
     {
@@ -204,11 +204,27 @@
         "active": true
     },
     {
-        "category": "others",
-        "name": "بستنی",
-        "price": 75,
-        "ingredients": "",
+        "category": "Browni",
+        "name": "کیک بستنی براونی",
+        "price": 440,
+        "ingredients": "کیک شکلاتی، بستنی، توت فرنگی",
+        "url": "../assets/images/browni_cake.jpg",
+        "active": true
+    },
+    {
+        "category": "Browni",
+        "name": "براونی بری",
+        "price": 350,
+        "ingredients": "کیک شکلاتی، توت فرنگی",
         "url": null,
-        "active": false
+        "active": true
+    },
+    {
+        "category": "Browni",
+        "name": "براونی شکلاتی",
+        "price": 280,
+        "ingredients": "کیک شکلاتی، توت فرنگی",
+        "url": "../assets/images/cake_browni.jpg",
+        "active": true
     }
 ]
