@@ -9,12 +9,21 @@
     --accent-gold: #d4af37;
 }
 
+@font-face {
+    font-family: 'vazir';
+    src: url('/assets/fonts/Vazir.woff2') format('woff2'),
+         url('/assets/fonts/Vazir.woff') format('woff'),  
+         url('/assets/fonts/Vazir.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'vazir', Tahoma, Geneva, Verdana, sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -148,8 +157,8 @@ header p {
 }
 
 .card-title {
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 1.01rem;
+    font-weight: 500;
     margin-bottom: 5px;
 }
 
@@ -170,6 +179,7 @@ header p {
     color: var(--accent-gold);
     text-align: left;
     margin-top: auto;
+    margin-left: 5px;
 }
 
 @keyframes fadeIn {
